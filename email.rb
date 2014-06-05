@@ -8,9 +8,13 @@ Dotenv.load
 
 # payload = { "to"=> "Natasha <natasha@newrelic.com>", "subject"=> "hello world", "body"=> "Hi Natasha! Sending you an email via this API I just made." }
 
-payload = { "to"=> "Brantley Beaird <bbeaird@gmail.com>", "subject"=> "hello world", "body"=> "Hi Natasha! Sending you an email via this API I just made." }
+get '/' do
+  Heroku is working!!!!!!!!!!
+end
 
 get '/send-email' do
+
+  payload = { "to"=> "Brantley Beaird <bbeaird@gmail.com>", "subject"=> "hello world", "body"=> "Hi Natasha! Sending you an email via this API I just made." }
 
   Mail.defaults do
     delivery_method :smtp, {
