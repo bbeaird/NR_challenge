@@ -8,13 +8,17 @@ Dotenv.load
 
 # payload = { "to"=> "Natasha <natasha@newrelic.com>", "subject"=> "hello world", "body"=> "Hi Natasha! Sending you an email via this API I just made." }
 
-get '/' do
-  'Heroku is working!!!!!!!!!!'
+get '/send-email' do
+  erb :form
 end
 
-get '/send-email' do
+# get '/send-email' do
+post '/send-email' do
 
-  payload = { "to"=> "Brantley Beaird <bbeaird@gmail.com>", "subject"=> "hello world", "body"=> "Hi Natasha! Sending you an email via this API I just made." }
+  # payload = { "to"=> "Brantley Beaird <bbeaird@gmail.com>", "subject"=> "hello world", "body"=> "Hi Natasha! Sending you an email via this API I just made." }
+  # payload = { "to": "Brantley Beaird <bbeaird@gmail.com>", "subject": "hello world", "body": "Hi Natasha! Sending you an email via this API I just made." }
+  payload = params["message"]
+  p payload
 
   Mail.defaults do
     delivery_method :smtp, {
