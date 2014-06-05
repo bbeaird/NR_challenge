@@ -9,7 +9,7 @@ Dotenv.load
 # payload = { "to"=> "Natasha <natasha@newrelic.com>", "subject"=> "hello world", "body"=> "Hi Natasha! Sending you an email via this API I just made." }
 
 get '/' do
-  Heroku is working!!!!!!!!!!
+  'Heroku is working!!!!!!!!!!'
 end
 
 get '/send-email' do
