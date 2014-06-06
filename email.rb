@@ -7,10 +7,6 @@ require 'json'
 
 Dotenv.load
 
-# payload = { "to": "Brantley <bbeaird@gmail.com>", "subject": "hello world", "body": "Hi Natasha! Sending you an email via this API I just made." }
-
-# curl -X POST -H "Content-Type: application/json" -d '{ "to": "Brantley <bbeaird@gmail.com>", "subject": "hello world", "body": "Hi Natasha! Sending you an email via this API I just made." }' http://localhost:9393/send-email
-
 post '/send-email' do
   payload = JSON.parse(request.body.read)
   send_email(payload)
